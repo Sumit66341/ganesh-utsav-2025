@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>गणेश</title>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #fff8e1, #ffe0b2);
+      color: #4b3b00;
+    }
+	.photo-strip {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background: #fff3e0;
+  gap: 10px;
+  justify-content: start;
+}
+.photo {
+  flex: 0 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ff6f00;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.photo-strip {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background: #fff3e0;
+  gap: 15px;
+  justify-content: start;
+}
+.photo-box {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 80px;
+}
+.photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ff6f00;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: auto;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.name {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #4b3b00;
+  font-weight: bold;
+}
+
+
+    header {
+      background: linear-gradient(90deg, #d84315, #ffb300);
+      color: white;
+      padding: 25px 10px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    main {
+      max-width: 650px;
+      margin: 30px auto;
+      background: #ffffffcc;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      backdrop-filter: blur(4px);
+    }
+    label {
+      font-weight: bold;
+    }
+    label, input, textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-shadow: inset 1px 1px 3px #eee;
+    }
+    button {
+      padding: 12px 24px;
+      background: #e65100;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #ff6f00;
+    }
+    #id-card {
+      width: 100%;
+      max-width: 500px;
+      margin: 30px auto;
+      display: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background: #ffffff;
+      border-left: 6px solid #ff6f00;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    #id-card-left, #id-card-right {
+      flex: 100%;
+      padding: 20px;
+    }
+    @media(min-width: 480px) {
+      #id-card-left {
+        flex: 1;
+        background: #fff8e1;
+        text-align: center;
+      }
+      #id-card-right {
+        flex: 2;
+        background: #263238;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    #id-card-left img {
+      width: 80px;
+      margin-top: 20px;
+    }
+    #id-card-right p {
+      margin: 8px 0;
+    }
+    #id-card-right h3 {
+      margin-bottom: 12px;
+      color: #ffb300;
+    }
+    #download-btn {
+      margin: 20px auto 0;
+      display: block;
+    }
+    #qr-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #qr-content {
+      background: #fff3e0;
+      padding: 40px 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    #qr-content img {
+      width: 260px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>🙏 गणेश उत्सव सेवा समिति 2025 🙏</header>
+  <div class="photo-strip">
+  <div class="photo-box">
+    <div class="photo"><img src="photos\sumit.png" alt="Photo 1"></div>
+    <p class="name">Sumit Verma</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="photos\sachin.png" alt="Photo 2"></div>
+    <p class="name">Sachin Verma</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="photos\shivam.jpg" alt="Photo 3"></div>
+    <p class="name">Shivam Verma</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="photos\vishal.jpg" alt="Photo 4"></div>
+    <p class="name">Vishal Verma</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="photos\abhishek.png" alt="Photo 5"></div>
+    <p class="name">Abhishek Verma</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="photos\annu.png" alt="Photo 6"></div>
+    <p class="name">Manas gautam</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="photos\anuj.jpeg.jpg" alt="Photo 7"></div>
+    <p class="name">Anuj Verma</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="images/p8.jpg" alt="Photo 8"></div>
+    <p class="name">........</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="images/p9.jpg" alt="Photo 9"></div>
+    <p class="name">........</p>
+  </div>
+  <div class="photo-box">
+    <div class="photo"><img src="images/p10.jpg" alt="Photo 10"></div>
+    <p class="name">.......</p>
+  </div>
+</div>
+
+
+  <main>
+    <form id="member-form">
+      <label for="name">पूरा नाम:</label>
+      <input type="text" id="name" required />
+      <label for="email">ईमेल:</label>
+      <input type="email" id="email" required />
+      <label for="phone">फोन नंबर:</label>
+      <input type="tel" id="phone" required />
+      <label for="address">पता:</label>
+      <textarea id="address" rows="2" required></textarea>
+      <label for="photo">फोटो अपलोड करें:</label>
+      <input type="file" id="photo" accept="image/*" required />
+      <button type="submit">🎉 रजिस्टर करें 🎉</button>
+    </form>
+    <div id="id-card">
+      <div id="id-card-left">
+        <img src="photos\bappa.jpeg.jpeg" alt="Ganpati Icon" style="border-radius:50px;">
+        <img id="id-photo" width="100" />
+      </div>
+      <div id="id-card-right">
+        <h3>गणेश उत्सव सेवा समिति 2025</h3>
+        <p><strong>नाम:</strong> <span id="card-name"></span></p>
+        <p><strong>ईमेल:</strong> <span id="card-email"></span></p>
+        <p><strong>फोन:</strong> <span id="card-phone"></span></p>
+        <p><strong>पता:</strong> <span id="card-address"></span></p>
+      </div>
+    </div>
+    <button id="download-btn" style="display:none;">📥 ID कार्ड डाउनलोड करें</button>
+  </main>
+  <div id="qr-modal">
+    <div id="qr-content">
+      <h3>🙏 कृपया  का भुगतान करें 🙏</h3>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=ytscrafts@ybl&pn=GaneshUtsav&am=21&cu=INR&size=250x250" alt="QR Code">
+      <p>पेमेंट करने के बाद नीचे क्लिक करें:</p>
+      <button onclick="completePayment()">✅ पेमेंट किया</button>
+    </div>
+  </div>
+  <script>
+    let formData = {};
+    const form = document.getElementById('member-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formData.name = document.getElementById('name').value;
+      formData.email = document.getElementById('email').value;
+      formData.phone = document.getElementById('phone').value;
+      formData.address = document.getElementById('address').value;
+      formData.photo = document.getElementById('photo').files[0];
+      document.getElementById('qr-modal').style.display = 'flex';
+    });
+    function completePayment() {
+      document.getElementById('qr-modal').style.display = 'none';
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('id-photo').src = e.target.result;
+      }
+      reader.readAsDataURL(formData.photo);
+      document.getElementById('card-name').textContent = formData.name;
+      document.getElementById('card-email').textContent = formData.email;
+      document.getElementById('card-phone').textContent = formData.phone;
+      document.getElementById('card-address').textContent = formData.address;
+      document.getElementById('id-card').style.display = 'flex';
+      document.getElementById('download-btn').style.display = 'block';
+    }
+    document.getElementById('download-btn').addEventListener('click', () => {
+      html2canvas(document.getElementById('id-card')).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'Ganpati_ID_Card.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    });
+  </script>
+</body>
+</html>
