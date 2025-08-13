@@ -71,6 +71,44 @@
             line-height: 1.6;
             font-size: 1rem;
         }
+
+	
+		
+		body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+}
+
+.pdf-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.pdf-section h2 {
+    color: #d35400;
+}
+
+.pdf-section p {
+    color: #333;
+}
+
+.pdf-btn {
+    display: inline-block;
+    background-color: #d35400;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.pdf-btn:hover {
+    background-color: #e67e22;
+}
+        
     </style>
 </head>
 <body>
@@ -148,6 +186,18 @@
         </div>
 
     </main>
+    	
+<section class="pdf-section">
+    <h2>📄 समिति की PDF जानकारी</h2>
+    <p>आप हमारी पूरी समिति की फोटो PDF डाउनलोड कर सकते हैं।</p>
+
+    <!-- PDF Viewer -->
+    <iframe src="pdfganpati.pdf" width="100%" height="500px"></iframe>
+
+    <!-- PDF Download Button -->
+    <a href="pdfganpati.pdf" download class="pdf-btn">⬇️ PDF डाउनलोड करें</a>
+</section>
 </body>
 </html>
+
 
